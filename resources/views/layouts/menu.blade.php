@@ -39,6 +39,7 @@
     </a>
 </li>
 @can('manage_staff')
+    <!--
     <li class="nav-item {{ Request::is('admin/staff*') ? 'active' : '' }}">
         <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('staff.index') }}">
         <span class="aside-menu-icon pe-3">
@@ -47,6 +48,7 @@
             <span class="aside-menu-title">{!! __('messages.staffs') !!}</span>
         </a>
     </li>
+    -->
 @endcan
 
 @canany(['manage_all_post'])
@@ -195,6 +197,7 @@
     </li>
 @endcan
 @can('manage_roles_permission')
+    <!--
     <li class="nav-item {{ Request::is('admin/roles*') ? 'active' : '' }}">
         <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('roles.index') }}">
         <span class="aside-menu-icon pe-3">
@@ -203,6 +206,7 @@
             <span class="aside-menu-title">{!! __('messages.roles_permissions') !!}</span>
         </a>
     </li>
+    -->
 @endcan
 
 @can('manage_seo_tools')
@@ -262,6 +266,7 @@
     -->
 @endcan
 @can('manage_ad')
+    <!--
 <li class="nav-item {{ Request::is('admin/ad-spaces*') ? 'active' : '' }}">
     <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('ad-spaces.create') }}">
         <span class="aside-menu-icon pe-3">
@@ -269,6 +274,7 @@
         <span class="aside-menu-title">{!! __('messages.ad_space.ad_space') !!}</span>
     </a>
 </li>
+-->
 @endif
 @can('manage_contacts')
     <!--

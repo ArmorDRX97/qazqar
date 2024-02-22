@@ -111,8 +111,8 @@
         <div class="container">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link  {{ (Request::is('/')) ? 'active' : '' }}" aria-current="page"
-                                href="/p">Блог</a>
+                    <a class="nav-link @if(Route::currentRouteName() == 'allPosts') active @endif" aria-current="page"
+                                href="/p">@lang('blog.all_articles')</a>
                             </li>
                                 @php
                                     $nav = getNavigationDetails();
