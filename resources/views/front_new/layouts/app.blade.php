@@ -103,9 +103,9 @@ not-main-page @endunless">
 @include('front_new.layouts.footer')
 <!-- end footer section -->
 <div class="navbar-m-backdrop"></div>
-@if($settings['show_cookie'])
-    @include('cookie-consent::index')
-@endif
+{{--@if($settings['show_cookie'])--}}
+{{--    @include('cookie-consent::index')--}}
+{{--@endif--}}
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/inputmask.min.js"></script>
