@@ -13,5 +13,4 @@ yarn-error.log
 /.vscode
 .idea
 /public/uploads
-/public/mix-manifest.json
 /public/sitemap.xml
