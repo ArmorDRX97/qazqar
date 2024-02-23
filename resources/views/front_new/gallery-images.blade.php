@@ -22,8 +22,8 @@
                     <div class="filters text-center mb-4">
                         <ul class="nav">
                             <li class="nav-item">
-                                <button class="fil-cat btn filter animation nav-category active text-black" href="javascript:void(0)"
-                                        data-filter="all">{{__('messages.all')}}
+                                <button class="fil-cat btn filter animation nav-category active text-black" id="filter-all" href="javascript:void(0)"
+                                        data-rel="all">{{__('messages.all')}}
                                 </button>
                             </li>
                             @if(count($allSubCategory) > 1)
@@ -99,6 +99,11 @@
                     filteredImages.forEach(function(image) {
                         image.style.display = 'block';
                     });
+                    if(category === 'all'){
+                        images.forEach(function(image) {
+                            image.style.display = 'block';
+                        });
+                    }
                 });
             });
         });
