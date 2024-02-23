@@ -2,6 +2,24 @@
 @section('title')
     Список заявок
 @endsection
+<style>
+    .delete-rental{
+        width: 35px;
+        height: 35px;
+        min-width: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        color: red;
+        cursor: pointer;
+        transition: 0.2s all ease;
+    }
+
+    .delete-rental:hover{
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+</style>
 @section('content')
     <style>
         .table.table-striped > thead > tr > th,
@@ -54,11 +72,12 @@
                         <th>Телефон</th>
                         <th>Дата заявки</th>
                         <th>Статус</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($rentals as $rental)
-                        <tr>
+                        <tr id="{{$rental->id}}">
                             <td>{{ $rental->car_name }}</td>
                             <td>{{ $rental->base_price }} ₸</td>
                             <td>{{ $rental->period }} дней</td>
@@ -99,6 +118,9 @@
                                     </select>
                                 </form>
                             </td>
+                            <td>
+                                <span class="delete-rental" onclick="modalRental({{$rental->id}})" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></span>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>
@@ -106,9 +128,64 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Удаление</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <h5 class="text-muted">Вы уверены, что хотите удалить?</h5>
+                </div>
+                <div class="modal-footer pt-2">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteRental()">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let idRental = null;
+     function modalRental(id) {
+         idRental = id;
+     }
+        function deleteRental() {
+            if (idRental) {
+                // Отправляем запрос на сервер для удаления записи
+                fetch(`application-list/${idRental}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // Если используется CSRF-защита
+                    },
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        $('#exampleModal').modal('hide');
+                        const tr = document.getElementById(idRental).remove();
+                        idRental = null;
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Обработка успешного ответа от сервера
+                        console.log(data.message); // Выводим сообщение об успешном удалении
+                        // Дополнительные действия, например, обновление интерфейса
+                    })
+                    .catch(error => {
+                        // Обработка ошибок
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('No rental ID specified');
+            }
+        }
+    </script>
 @endsection
-<script>
-</script>
 {{--@section('page_js')--}}
 {{--    <script src="{{mix('assets/js/sub_category/sub_category.js')}}"></script>--}}
 {{--@endsection--}}

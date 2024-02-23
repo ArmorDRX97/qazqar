@@ -6,4 +6,5 @@ return [
     'what_reaction' => 'What\'s Your Reaction?',
     'previous' => 'Previous',
     'next' => 'Next',
+    'more' => 'More',
 ];

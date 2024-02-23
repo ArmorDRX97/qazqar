@@ -10,7 +10,7 @@
     "/ckeditor4/plugins/about/dialogs/about.js": "/ckeditor4/plugins/about/dialogs/about.js?id=40e3ae83cbfbab9e32eef2021e8ce3bc",
     "/ckeditor4/plugins/pastetools/filter/common.js": "/ckeditor4/plugins/pastetools/filter/common.js?id=8536b42483cbb2439e222215ee7c5aa8",
     "/ckeditor4/plugins/pastefromword/filter/default.js": "/ckeditor4/plugins/pastefromword/filter/default.js?id=d4f552b4784d6158f34441887f754f1d",
-    "/assets/js/pages.js": "/assets/js/pages.js?id=b4aaad4cfd18dffcbc3c7ccde36a4332",
+    "/assets/js/pages.js": "/assets/js/pages.js?id=71d4a6124f90c099b72510a6684647d8",
     "/assets/js/front-pages.js": "/assets/js/front-pages.js?id=5183510a2bef5f0271f5677308f52c95",
     "/assets/js/auth-pages.js": "/assets/js/auth-pages.js?id=0c9584d142fc34c2ffd44b7353d7f37f",
     "/assets/css/newstyle.css": "/assets/css/newstyle.css?id=036604023ee59826eb7a2e89d8555bc9",
@@ -264,6 +264,6 @@
     "/front_web/images/tranding-post5.png": "/front_web/images/tranding-post5.png?id=832d48a9aa0691acc192acaeb2e0c505",
     "/front_web/images/tranding-post6.png": "/front_web/images/tranding-post6.png?id=a75abbc395c18a41b8f5389bf14e3b69",
     "/assets/js/lazyload/lazyload.js": "/assets/js/lazyload/lazyload.js?id=339da88afed2f77c25333090e27f3777",
-    "/assets/js/front-third-party.js": "/assets/js/front-third-party.js?id=7704ad07328cef19a2a74a0926988f16",
+    "/assets/js/front-third-party.js": "/assets/js/front-third-party.js?id=0be7b970eab47f1fec391e2d6655464b",
     "/css/front-third-party.css": "/css/front-third-party.css?id=e0129042cb714b9be7e79fb586155027"
 }

@@ -45,6 +45,11 @@ class DashboardController extends AppBaseController
         return view('dashboard.index', compact('posts', 'postsDraft', 'users', 'rss', 'rssPost'));
     }
 
+    public function wiki()
+    {
+        return view('layouts.wiki');
+    }
+
     /**
      * @param  Request  $request
      * @return JsonResponse

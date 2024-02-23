@@ -34,4 +34,13 @@ class RentalListController extends AppBaseController
 
         return redirect()->back()->with('success', 'Status updated successfully.');
     }
+    public function destroy($id)
+    {
+        $rental = Rental::findOrFail($id);
+
+        $rental->delete();
+
+        return '\'success\', \'Status updated successfully.\'';
+    }
+
 }

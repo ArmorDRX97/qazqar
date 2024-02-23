@@ -20,6 +20,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 front-custom-page-div">
+                    <h1>{{$page->title}}</h1>
                     <!-- start sports-left-section -->
                 {{--                        <section class="row">--}}
                 {!!  $page->content !!}

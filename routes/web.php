@@ -66,6 +66,8 @@ Route::prefix('admin')->middleware('auth', 'xss', 'verified.user')->group(functi
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/chart', [DashboardController::class, 'getChart'])->name('dashboard.chart');
     Route::get('/application-list', [RentalListController::class, 'index'])->name('rental.list');
+    Route::delete('/application-list/{id}', [RentalListController::class, 'destroy'])->name('rentals.destroy');
+    Route::get('/admin-wiki', [DashboardController::class, 'wiki'])->name('dashboard.wiki');
     Route::patch('/rental-status/{id}', [RentalListController::class, 'updateStatus'])->name('rental-status');
     Route::get('/generate-sitemap', function () {
         \Illuminate\Support\Facades\Artisan::call('generate:sitemap');

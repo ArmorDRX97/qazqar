@@ -298,3 +298,11 @@
         </a>
     </li>
 @endcan
+<li class="nav-item {{ Request::is('admin/admin-wiki*') ? 'active' : '' }}">
+    <a class="nav-link d-flex align-items-center py-3" aria-current="page" href="{{ route('dashboard.wiki') }}">
+        <span class="aside-menu-icon pe-3">
+            <i class="fa-solid fa-circle-question s-4" style="color: #009f00;"></i>
+        </span>
+        <span class="aside-menu-title" style="color: #009f00;">Wiki</span>
+    </a>
+</li>

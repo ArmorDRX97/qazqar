@@ -137,7 +137,11 @@
                                             <a class="nav-link   {{ $menuName == ucfirst(last(request()->segments()))
                                                 ? 'active': '' }}" aria-current="page"
                                                @if(($navigation->navigationable->link) !== null)
+                                                   @if(getNavUrl($navigation->navigationable->link) == 'http://#' || getNavUrl($navigation->navigationable->link) == 'http://-')
+                                               href="#"
+                                               @else
                                                href="{{getNavUrl($navigation->navigationable->link)}}"
+                                                   @endif
                                                @else
                                                href="{{route('categoryPage',$navigation->navigationable->slug)}}"
                                                 @endif
@@ -296,7 +300,7 @@
                     <li class="nav-item dropdown">
                         @if($nav['pages']->count() > 0)
                             <a class="nav-link  {{ 'Pages' == ucfirst(last(request()->segments())) ? 'active': '' }}"
-                               href="javascript:void(0)">{{ __('messages.pages') }}
+                               href="javascript:void(0)">{{ __('blog.more') }}
                                 <i class="fa-solid fa-angle-down icon ms-1 fs-12"></i>
                             </a>
                         @endif

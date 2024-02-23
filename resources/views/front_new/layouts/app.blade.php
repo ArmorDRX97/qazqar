@@ -69,6 +69,21 @@
     <script>
         {!! (!empty(getSEOTools()->google_analytics)) ? getSEOTools()->google_analytics : '' !!}
     </script>
+
+    <script>
+        function initializeSiterWPWidget() {
+            SiterWPWidget({
+                phone: '+7 777 777 77 77',
+                phoneNormalize: true,
+                message: 'Hello world'
+            });
+        }
+        const siterWPWidgetScript = document.createElement('script');
+        siterWPWidgetScript.src = https://siter.kz/widget-wp/main.js?${Date.now()};
+        siterWPWidgetScript.async = true;
+        siterWPWidgetScript.onload = initializeSiterWPWidget;
+        document.head.appendChild(siterWPWidgetScript);
+    </script>
 </head>
 <body class="
  @unless(

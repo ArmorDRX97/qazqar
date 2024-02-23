@@ -4,7 +4,12 @@
 @endsection
 
 @section('content')
-            <div class="container-fluid">
+    <style>
+.lnaguage-page .livewire-search-box{
+    display: none!important;
+}
+    </style>
+            <div class="container-fluid lnaguage-page">
                 @include('flash::message')
                 <div>
                     <div class="pt-0">
@@ -12,7 +17,7 @@
                     </div>
                 </div>
             </div>
-      
+
     @include('languages.add_modal')
     @include('languages.edit_modal')
 @endsection

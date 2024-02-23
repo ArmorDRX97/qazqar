@@ -81,6 +81,7 @@
                             </div>
                         </div>
                     @endcan
+                   @if(false)
                     @can('manage_staff')
                         <div class="row">
                             <div class="col-xl-6">
@@ -138,6 +139,7 @@
                             </div>
                         </div>
                     @endcan
+        @endif
             </div>
         </div>
     </div>

@@ -29,11 +29,11 @@ class LanguageTable extends LivewireTableComponent
                 ->sortable()->searchable(),
             Column::make(__('messages.language.iso_code'), 'iso_code')
                 ->sortable()->searchable(),
-            Column::make(__('messages.language.front_language'), 'front_language_status')
-                ->sortable()->searchable(),
+//            Column::make(__('messages.language.front_language'), 'front_language_status')
+//                ->sortable()->searchable(),
             Column::make(__('messages.language.translation')),
-            Column::make(__('messages.common.action'), 'id')
-                ->addClass('custom-width-action'),
+//            Column::make(__('messages.common.action'), 'id')
+//                ->addClass('custom-width-action'),
         ];
     }
 
@@ -61,7 +61,7 @@ class LanguageTable extends LivewireTableComponent
                 'componentName' => 'languages.add-button',
             ]);
     }
-    
+
     public function updateLanguageStatus($postId)
     {
         $language = Language::findOrFail($postId);

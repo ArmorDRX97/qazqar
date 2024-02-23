@@ -5,11 +5,20 @@ function loadCreateEditPageData() {
     pageCreatTinymce();
     pageEditTinymce()
     listen('keyup',"#pageTitlePage",function() {
-        var Text = $.trim($(this).val());
-        Text = Text.toLowerCase();
-        Text = Text.replace(/[^a-zA-Z0-9]+/g,'-');
-        $("#pageSlug").val(Text);
-        $("#pageSlugHidden").val(Text);
+        var text = $(this).val();
+        $.ajax({
+            url: route('post-slug'),
+            type: 'post',
+            data : {
+                text : text
+            },
+            success: function (result) {
+                if (result.success) {
+                    $("#pageSlug").val(result.data);
+                    $("#pageSlugHidden").val(result.data);
+                }
+            },
+        })
     });
 }
 
@@ -148,5 +157,5 @@ listen('hidden.bs.modal', '#pageFileModal', function () {
 listen('click', '.btn-check', function () {
     $('.modal-footer').removeClass('d-none')
 })
-    
-   
+
+
