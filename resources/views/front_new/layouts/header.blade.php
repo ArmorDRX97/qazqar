@@ -76,9 +76,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/#faq">@lang('menu.terms')</a>
                 </li>
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="/p">@lang('menu.blog')</a>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/p">@lang('menu.blog')</a>
+                </li>
             </ul>
             <hr>
             <ul class="langs-m">
