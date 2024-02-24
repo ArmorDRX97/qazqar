@@ -18,10 +18,9 @@
                  class="img-404 mx-auto" height="500" width="500">
         </div>
         <div class="col-md-12 text-center error-page-404">
-            <h2>Opps! Something's missing...</h2>
-            <p class="not-found-subtitle">The page you are looking for doesn't exists / isn't available / was loading
-                incorrectly.</p>
-            <a class="btn btn-primary back-btn mt-3" href="{{ url()->previous() }}">Back to Previous Page</a>
+            <h2>{{__('blog.oops_somethings_missing')}}</h2>
+            <p class="not-found-subtitle">{{__('blog.the_page_you_are_looking')}}</p>
+            <a class="btn btn-primary back-btn mt-3" href="{{ url()->previous() }}">{{__('blog.back_to_home')}}</a>
         </div>
     </div>
 </div>
