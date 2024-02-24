@@ -20,7 +20,7 @@
         <div class="col-md-12 text-center error-page-404">
             <h2>{{__('blog.oops_somethings_missing')}}</h2>
             <p class="not-found-subtitle">{{__('blog.the_page_you_are_looking')}}</p>
-            <a class="btn btn-primary back-btn mt-3" href="{{ url()->previous() }}">{{__('blog.back_to_home')}}</a>
+            <a class="btn btn-primary back-btn mt-3" href="/">{{__('blog.back_to_home')}}</a>
         </div>
     </div>
 </div>
