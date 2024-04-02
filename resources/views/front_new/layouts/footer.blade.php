@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="end">
-            © @php echo  date('Y') @endphp Qazcar. @lang('main.all_rights_reserved')
+            © @php echo  date('Y') @endphp Qazqar. @lang('main.all_rights_reserved')
         </div>
     </div>
 </footer>
